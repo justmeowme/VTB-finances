@@ -21,6 +21,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class RegistrationVM extends ViewModel {
 
     private MutableLiveData<Boolean> result = new MutableLiveData<Boolean>(false);
+    private MutableLiveData<Boolean> isEmailError = new MutableLiveData<>(false);
+    private MutableLiveData<Boolean> isPasswordError = new MutableLiveData<>(false);
+    private MutableLiveData<Boolean> isName = new MutableLiveData<>(false);
     private FirebaseAuth mAuth;
 
     public LiveData<Boolean> getResult() {
@@ -33,7 +36,6 @@ public class RegistrationVM extends ViewModel {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        FirebaseUser user = mAuth.getCurrentUser();
                         /*
                         Stock stock = new Stock("Sberbank", 30, 3500L);
                         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -42,10 +44,10 @@ public class RegistrationVM extends ViewModel {
                                 .addOnSuccessListener(documentReference -> Log.d("RegistrationVM", "DocumentSnapshot added with ID: " + documentReference.getId()))
                                 .addOnFailureListener(e -> Log.w("RegistrationVM", "Error adding document", e));
                         Log.d("RegistrationVM", "success");
+                         */
                         result.postValue(true);
-                        */
                     } else {
-                        Log.d("RegistrationVM", "failure");
+                        Log.d("RegistrationVM", "failure", task.getException());
                         result.postValue(false);
                     }
                 });

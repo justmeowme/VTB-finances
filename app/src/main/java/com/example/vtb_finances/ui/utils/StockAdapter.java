@@ -40,7 +40,6 @@ class StockViewHolder extends RecyclerView.ViewHolder {
 
     public void bind(Stock stock) {
         Log.d("StockVH", "imageView " + (imageView == null));
-
         Glide.with(itemView.getContext())
                 .load(stock.getImage())
                 .into(imageView);

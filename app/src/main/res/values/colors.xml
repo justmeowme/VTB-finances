@@ -2,6 +2,7 @@
 <resources>
 
     <color name="col_primary">#3A83F1</color>
+    <color name="col_sub_primary">#3A83F1</color>
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

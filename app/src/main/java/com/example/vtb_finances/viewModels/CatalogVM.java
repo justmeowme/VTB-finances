@@ -43,7 +43,6 @@ public class CatalogVM extends ViewModel {
                                 ArrayList<Stock> newStoks = new ArrayList<>();
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     Log.d(TAG, document.getId() + " => " + document.getData());
-
                                     Stock stock = new Stock(
                                             document.get("name", String.class),
                                             document.get("count", Integer.class),

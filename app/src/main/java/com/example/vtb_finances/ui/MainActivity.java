@@ -12,6 +12,7 @@ import android.preference.PreferenceManager;
 
 import com.example.vtb_finances.R;
 import com.example.vtb_finances.ui.fragments.CatalogFragment;
+import com.example.vtb_finances.ui.fragments.NewsFragment;
 import com.example.vtb_finances.ui.utils.Tab;
 import com.example.vtb_finances.viewModels.MainVM;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private void openFragment(Tab tab) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         // TODO add all fragments
-        ft.add(R.id.container, CatalogFragment.newInstance());
+        ft.add(R.id.container, NewsFragment.newInstance());
         ft.commitNow();
     }
 

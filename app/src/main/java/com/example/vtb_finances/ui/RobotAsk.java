@@ -27,11 +27,11 @@ public class RobotAsk extends AppCompatActivity {
         mFemale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isActive == "none" || isActive == "male"){
+                if (isActive == "none" || isActive == "male") {
                     mMale.setImageResource(R.drawable.ic_malebutton);
                     mFemale.setImageResource(R.drawable.ic_femalebuttonactive);
                     isActive = "female";
-                } else{
+                } else {
                     mFemale.setImageResource(R.drawable.ic_femalebutton);
                     isActive = "none";
                 }
@@ -41,18 +41,15 @@ public class RobotAsk extends AppCompatActivity {
         mMale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isActive == "none" || isActive == "female"){
+                if (isActive == "none" || isActive == "female") {
                     mMale.setImageResource(R.drawable.ic_malebuttonactive);
                     mFemale.setImageResource(R.drawable.ic_femalebutton);
                     isActive = "male";
-                } else{
+                } else {
                     mMale.setImageResource(R.drawable.ic_malebutton);
                     isActive = "none";
                 }
             }
         });
-
-
     }
-
 }

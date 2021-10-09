@@ -9,10 +9,8 @@
     tools:context=".ui.MainPage">
 
     <RelativeLayout
-        android:layout_weight="0.3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" >
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/imageView"
@@ -45,7 +43,6 @@
 
     <RelativeLayout
 
-        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" >
@@ -107,7 +104,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_weight="3"
         android:background="@drawable/roundwhite"
         android:text="TextView">
 
@@ -169,66 +165,17 @@
             android:layout_height="wrap_content"
             android:background="@drawable/roundblue"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Начать +10 XP"
+            android:text="Начать"
             android:textSize="18sp"
             android:textAllCaps="false"
             android:textColor="@color/white"
+            android:layout_marginVertical="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/imageView2"
             app:layout_constraintStart_toStartOf="@+id/book"
             app:layout_constraintTop_toBottomOf="@+id/task" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@drawable/roundwhite"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_weight="20"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <ImageView
-            android:id="@+id/bag"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_bag"
-            tools:ignore="VectorDrawableCompat" />
-
-        <TextView
-            android:id="@+id/jtext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/bag"
-            android:layout_alignBottom="@+id/bag"
-            android:layout_marginStart="16dp"
-            android:layout_toEndOf="@+id/bag"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Мой портфель"
-            android:textColor="@color/blue_main"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/bag"
-            app:layout_constraintStart_toEndOf="@+id/bag"
-            app:layout_constraintTop_toTopOf="@+id/bag" />
-
-        <TextView
-            android:id="@+id/textnone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Здесь пока ничего нет"
-            android:textColor="#CCCCCC"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
 

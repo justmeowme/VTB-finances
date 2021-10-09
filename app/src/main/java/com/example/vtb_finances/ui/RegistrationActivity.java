@@ -29,13 +29,20 @@ public class RegistrationActivity extends AppCompatActivity {
         EditText name = findViewById(R.id.act_registration_name_et);
         EditText password = findViewById(R.id.act_registration_password_et);
         EditText mail = findViewById(R.id.act_registration_mail_et);
-
+        bind();
         btn.setOnClickListener(v -> {
             Log.d(
                     TAG,
                     String.format("name : %s, password : %s", name.getText().toString(), password.getText().toString()));
             registrationVM.register(mail.getText().toString(), password.getText().toString());
-            // startActivity(new Intent(RegistrationActivity.this, Robot.class));
+        });
+    }
+
+    private void bind() {
+        registrationVM.getResult().observe(this, result -> {
+            if (result) {
+                startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
+            }
         });
     }
 }

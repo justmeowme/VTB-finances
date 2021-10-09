@@ -7,4 +7,5 @@
     <string name="act_registration_btn">Зарегистрироваться</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="item_news_header">Новости</string>
 </resources>

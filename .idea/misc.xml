@@ -5,14 +5,23 @@
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/drawable/bg_act_main_menu.xml" value="0.2203125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/drawable/bg_action_stock.xml" value="0.2169230769230769" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/drawable/bg_item_news.xml" value="0.2203125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/drawable/bg_registration_btn.xml" value="0.2203125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/drawable/ic_act_main_tint.xml" value="0.2203125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/activity_login.xml" value="0.17798913043478262" />
         <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/activity_main.xml" value="0.17798913043478262" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/activity_main_page.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/activity_registration.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/activity_robot.xml" value="0.1802536231884058" />
         <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/activity_splash.xml" value="0.17798913043478262" />
         <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/activity_start.xml" value="0.17798913043478262" />
         <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/frag_catalog.xml" value="0.1802536231884058" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/frag_profile.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/fragment_briefcase.xml" value="0.1802536231884058" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/fragment_news.xml" value="0.1802536231884058" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/item_briefcase_header.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/item_news.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/item_news_header.xml" value="0.1802536231884058" />
         <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/layout/item_stock.xml" value="0.15489130434782608" />
         <entry key="..\:/Users/User/AndroidStudioProjects/VTB-finances/app/src/main/res/menu/main_menu.xml" value="0.20416666666666666" />
       </map>
