@@ -7,11 +7,16 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.vtb_finances.model.Stock;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class RegistrationVM extends ViewModel {
 
@@ -29,8 +34,16 @@ public class RegistrationVM extends ViewModel {
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         FirebaseUser user = mAuth.getCurrentUser();
+                        /*
+                        Stock stock = new Stock("Sberbank", 30, 3500L);
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+                        db.collection("stocks")
+                                .add(stock)
+                                .addOnSuccessListener(documentReference -> Log.d("RegistrationVM", "DocumentSnapshot added with ID: " + documentReference.getId()))
+                                .addOnFailureListener(e -> Log.w("RegistrationVM", "Error adding document", e));
                         Log.d("RegistrationVM", "success");
                         result.postValue(true);
+                        */
                     } else {
                         Log.d("RegistrationVM", "failure");
                         result.postValue(false);

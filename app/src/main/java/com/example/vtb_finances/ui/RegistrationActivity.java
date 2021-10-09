@@ -35,7 +35,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     TAG,
                     String.format("name : %s, password : %s", name.getText().toString(), password.getText().toString()));
             registrationVM.register(mail.getText().toString(), password.getText().toString());
-            startActivity(new Intent(RegistrationActivity.this, Robot.class));
+            // startActivity(new Intent(RegistrationActivity.this, Robot.class));
         });
     }
 }
