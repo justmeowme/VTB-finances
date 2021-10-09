@@ -1,4 +1,4 @@
-package com.example.vtb_finances;
+package com.example.vtb_finances.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+
+import com.example.vtb_finances.R;
 
 public class MainActivity extends AppCompatActivity {
 
