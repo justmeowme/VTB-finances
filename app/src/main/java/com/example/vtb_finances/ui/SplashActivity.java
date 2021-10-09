@@ -1,10 +1,12 @@
-package com.example.vtb_finances;
+package com.example.vtb_finances.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.vtb_finances.R;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -13,7 +15,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        //штучка которая делает первое окошечко на 1.2 секунды
+        // штучка которая делает первое окошечко на 1.2 секунды
         int milliseconds_delayed = 1200;
         new Handler().postDelayed(new Runnable() {
             @Override

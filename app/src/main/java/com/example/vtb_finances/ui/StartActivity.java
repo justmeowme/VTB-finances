@@ -1,11 +1,12 @@
-package com.example.vtb_finances;
+package com.example.vtb_finances.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
+
+import com.example.vtb_finances.R;
 
 public class StartActivity extends AppCompatActivity {
 
@@ -15,11 +16,8 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
 
         ImageView mStart = findViewById(R.id.button_start);
-        mStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(StartActivity.this,LoginActivity.class));
-            }
-        });
+        mStart.setOnClickListener(v ->
+                startActivity(new Intent(StartActivity.this, LoginActivity.class))
+        );
     }
 }

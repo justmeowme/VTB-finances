@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">VTB-finances</string>
+    <string name="act_registration_name">Имя</string>
+    <string name="act_registration_mail">Email</string>
+    <string name="act_registration_password">Пароль</string>
+    <string name="act_registration_title">Регистрация</string>
+    <string name="act_registration_btn">Зарегистрироваться</string>
 </resources>

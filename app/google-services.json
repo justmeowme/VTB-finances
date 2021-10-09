@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1053550065209",
+    "project_id": "ft-project-vtb",
+    "storage_bucket": "ft-project-vtb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053550065209:android:377cb670e792e338623fe8",
+        "android_client_info": {
+          "package_name": "com.example.vtb_finances"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053550065209-4mmmuv7pvokjcmvqvk4taf0aialuk6j4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4dC6ZPd5geVor9oNoC5d0HO8MbP8cXDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1053550065209-4mmmuv7pvokjcmvqvk4taf0aialuk6j4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
