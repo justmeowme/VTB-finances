@@ -3,6 +3,7 @@ package com.example.vtb_finances.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -34,6 +35,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     TAG,
                     String.format("name : %s, password : %s", name.getText().toString(), password.getText().toString()));
             registrationVM.register(mail.getText().toString(), password.getText().toString());
+            startActivity(new Intent(RegistrationActivity.this, Robot.class));
         });
     }
 }

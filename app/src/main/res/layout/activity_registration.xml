@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,6 +13,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.15"
         android:textSize="24sp"
+        android:fontFamily="@font/montserrat_bold"
         android:layout_marginHorizontal="32dp"
         android:text="@string/act_registration_title"
         android:textColor="@color/col_primary"
@@ -31,6 +33,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/act_registration_name_et"
+            android:fontFamily="@font/montserrat_regular"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -52,6 +55,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/act_registration_mail_et"
             android:layout_width="match_parent"
+            android:fontFamily="@font/montserrat_regular"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -72,7 +76,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/act_registration_password_et"
             android:layout_width="match_parent"
+            android:fontFamily="@font/montserrat_regular"
+            android:max="100"
             android:layout_height="match_parent" />
+
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,15 +87,18 @@
         android:id="@+id/act_registration_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/act_registration_password_il"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         android:layout_margin="32dp"
-        android:textColor="@android:color/white"
-        android:text="@string/act_registration_btn"
         android:background="@drawable/bg_registration_btn"
-        />
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/act_registration_btn"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/act_registration_password_il"
+        app:layout_constraintVertical_bias="0.6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
