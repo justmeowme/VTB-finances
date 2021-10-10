@@ -34,7 +34,11 @@ public class RegistrationActivity extends AppCompatActivity {
             Log.d(
                     TAG,
                     String.format("name : %s, password : %s", name.getText().toString(), password.getText().toString()));
-            registrationVM.register(mail.getText().toString(), password.getText().toString());
+            registrationVM.register(
+                    name.getText().toString(),
+                    mail.getText().toString(),
+                    password.getText().toString()
+            );
         });
     }
 

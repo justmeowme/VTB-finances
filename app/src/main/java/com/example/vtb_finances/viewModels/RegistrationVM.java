@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.vtb_finances.model.Stock;
+import com.example.vtb_finances.model.UserInfo;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -18,8 +19,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Collections;
+
 public class RegistrationVM extends ViewModel {
 
+    private final String TAG = "RegistrationVM";
     private MutableLiveData<Boolean> result = new MutableLiveData<Boolean>(false);
     private MutableLiveData<Boolean> isEmailError = new MutableLiveData<>(false);
     private MutableLiveData<Boolean> isPasswordError = new MutableLiveData<>(false);
@@ -30,26 +34,41 @@ public class RegistrationVM extends ViewModel {
         return result;
     }
 
-    public void register(String email, String password) {
+    public void register(String name, String email, String password) {
         mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        /*
-                        Stock stock = new Stock("Sberbank", 30, 3500L);
-                        FirebaseFirestore db = FirebaseFirestore.getInstance();
-                        db.collection("stocks")
-                                .add(stock)
-                                .addOnSuccessListener(documentReference -> Log.d("RegistrationVM", "DocumentSnapshot added with ID: " + documentReference.getId()))
-                                .addOnFailureListener(e -> Log.w("RegistrationVM", "Error adding document", e));
-                        Log.d("RegistrationVM", "success");
-                         */
-                        result.postValue(true);
+                        createUserInfo(mAuth.getCurrentUser().getUid(), name, email);
                     } else {
                         Log.d("RegistrationVM", "failure", task.getException());
                         result.postValue(false);
                     }
-                });
+                })
+
+        ;
+    }
+
+    private void createUserInfo(String id, String name, String email) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("users")
+                .add(new UserInfo(
+                        id,
+                        name,
+                        1000,
+                        1,
+                        email,
+                        18,
+                        Collections.emptyList()
+                ))
+                .addOnSuccessListener(documentReference -> {
+                    result.postValue(true);
+                    Log.d(TAG, "");
+                })
+                .addOnFailureListener(ex -> {
+                    Log.w(TAG, "Error adding document", ex);
+                    result.postValue(false);
+                })
+        ;
     }
 }
