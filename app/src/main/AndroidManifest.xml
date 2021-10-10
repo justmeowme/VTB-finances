@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VTBfinances">
+        <activity android:name=".ui.Task"></activity>
         <activity android:name=".ui.RobotAsk" />
         <activity android:name=".ui.Robot" />
         <activity android:name=".ui.StartActivity" />
