@@ -18,19 +18,32 @@ public class LoginVM extends ViewModel {
     private final String TAG = "LoginVM";
     private MutableLiveData<Boolean> isAuth = new MutableLiveData<>(false);
     private MutableLiveData<Boolean> isErrorAuth = new MutableLiveData<>(false);
+    private MutableLiveData<Boolean> isInvalidData = new MutableLiveData<>(false);
     private FirebaseAuth mAuth;
 
     public LiveData<Boolean> getIsAuth() {
         return isAuth;
     }
 
+    public LiveData<Boolean> getIsInvalidData() {
+        return isInvalidData;
+    }
+
+    public LiveData<Boolean> getIsErrorAuth() {
+        return isErrorAuth;
+    }
+
     public void login(String mail, String password) {
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(mail).matches() || password.isEmpty()) {
+            isInvalidData.postValue(true);
+            return;
+        }
+
         mAuth = FirebaseAuth.getInstance();
         mAuth.signInWithEmailAndPassword(mail, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Log.d(TAG, "signInWithEmail:success");
-                        FirebaseUser user = mAuth.getCurrentUser();
                         isAuth.postValue(true);
                     } else {
                         Log.w(TAG, "signInWithEmail:failure", task.getException());

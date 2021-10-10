@@ -9,20 +9,19 @@
         android:id="@+id/act_registration_title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.15"
-        android:textSize="24sp"
-        android:fontFamily="@font/montserrat_bold"
         android:layout_marginHorizontal="32dp"
+        android:fontFamily="@font/montserrat_bold"
         android:text="@string/act_registration_title"
         android:textColor="@color/col_primary"
-        />
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/act_registration_name_il"
-        android:layout_width="match_parent"
         style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="16dp"
@@ -33,18 +32,18 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/act_registration_name_et"
-            android:fontFamily="@font/montserrat_regular"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat_regular" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/act_registration_mail_il"
+        style="@style/Widget.Design.TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.Design.TextInputLayout"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="16dp"
         android:hint="@string/act_registration_mail"
@@ -55,17 +54,18 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/act_registration_mail_et"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_regular"
-            android:layout_height="wrap_content" />
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/act_registration_password_il"
+        style="@style/Widget.Design.TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
-        style="@style/Widget.Design.TextInputLayout"
         android:layout_marginTop="16dp"
         android:hint="@string/act_registration_password"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,9 +76,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/act_registration_password_et"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:fontFamily="@font/montserrat_regular"
-            android:max="100"
-            android:layout_height="match_parent" />
+            android:max="100" />
 
 
     </com.google.android.material.textfield.TextInputLayout>

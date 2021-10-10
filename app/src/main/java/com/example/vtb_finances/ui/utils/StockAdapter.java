@@ -24,13 +24,13 @@ import java.util.List;
 
 class StockViewHolder extends RecyclerView.ViewHolder {
 
-    private RequestManager requestManager;
     private ImageView imageView;
     private TextView nameTV;
     private TextView purchaseCostTV;
     private TextView sellingPrice;
+    private StockAdapter.StockListener listener;
 
-    public StockViewHolder(@NonNull View itemView, RequestManager requestManager) {
+    public StockViewHolder(@NonNull View itemView, StockAdapter.StockListener stockListener) {
         super(itemView);
         this.imageView = itemView.findViewById(R.id.item_stock_image);
         nameTV = itemView.findViewById(R.id.item_stock_name);
@@ -45,6 +45,10 @@ class StockViewHolder extends RecyclerView.ViewHolder {
                 .into(imageView);
         nameTV.setText(stock.getName());
         purchaseCostTV.setText(String.valueOf(stock.getPurchaseCost()));
+        purchaseCostTV.setOnClickListener(v -> {
+                    listener.purchase(stock);
+                }
+        );
         sellingPrice.setText(String.valueOf(stock.getSellingPrice()));
     }
 }
@@ -52,12 +56,12 @@ class StockViewHolder extends RecyclerView.ViewHolder {
 public class StockAdapter extends RecyclerView.Adapter<StockViewHolder> {
 
     private List<Stock> stocks = new ArrayList<>();
-    private final RequestManager requestManager;
+    private final StockListener stockListener;
 
-    public StockAdapter(List<Stock> stocks, RequestManager requestManager) {
+    public StockAdapter(List<Stock> stocks, StockListener stockListener) {
         super();
         this.stocks = stocks;
-        this.requestManager = requestManager;
+        this.stockListener = stockListener;
     }
 
     public List<Stock> getStocks() {
@@ -72,7 +76,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockViewHolder> {
     @Override
     public StockViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_stock, parent, false);
-        return new StockViewHolder(view, requestManager);
+        return new StockViewHolder(view, stockListener);
     }
 
     @Override
@@ -83,5 +87,10 @@ public class StockAdapter extends RecyclerView.Adapter<StockViewHolder> {
     @Override
     public int getItemCount() {
         return stocks.size();
+    }
+
+    @FunctionalInterface
+    public interface StockListener {
+        void purchase(Stock stock);
     }
 }

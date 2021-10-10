@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.vtb_finances.R;
 import com.example.vtb_finances.databinding.ActivityLoginBinding;
@@ -18,9 +19,6 @@ import com.example.vtb_finances.viewModels.RegistrationVM;
 public class LoginActivity extends AppCompatActivity {
 
     private LoginVM loginVM;
-    private EditText email;
-    private EditText password;
-
     private ActivityLoginBinding binding;
 
     @Override
@@ -37,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void bindView() {
         binding.enterButton.setOnClickListener(v ->
-                loginVM.login(email.getText().toString(), password.getText().toString())
+                loginVM.login(binding.email.getText().toString(), binding.password.getText().toString())
         );
         binding.registerButton.setOnClickListener(v -> {
                     Intent intent = new Intent(this, RegistrationActivity.class);
@@ -51,6 +49,16 @@ public class LoginActivity extends AppCompatActivity {
             if (isAuth) {
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
+            }
+        });
+        loginVM.getIsInvalidData().observe(this, isInvalide -> {
+            if (isInvalide) {
+                Toast.makeText(this, "Неверный формат!", Toast.LENGTH_SHORT).show();
+            }
+        });
+        loginVM.getIsErrorAuth().observe(this, isErrorAuth -> {
+            if (isErrorAuth) {
+                Toast.makeText(this, "Ошибка авторизации!", Toast.LENGTH_SHORT).show();
             }
         });
     }

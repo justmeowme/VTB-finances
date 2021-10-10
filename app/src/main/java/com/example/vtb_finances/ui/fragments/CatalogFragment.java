@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-public class CatalogFragment extends Fragment {
+public class CatalogFragment extends Fragment implements StockAdapter.StockListener {
 
     private CatalogVM catalogVM;
 
@@ -60,15 +60,14 @@ public class CatalogFragment extends Fragment {
         });
         rv.setLayoutManager(new GridLayoutManager(requireActivity(), 2));
         rv.addItemDecoration(new GridMarginItemDecoration(getResources().getDimensionPixelSize(R.dimen.news_margin), 2));
-        rv.setAdapter(new StockAdapter(
-                new ArrayList<Stock>(),
-                Glide.with(requireActivity().getApplicationContext()))
-        );
+        rv.setAdapter(new StockAdapter(new ArrayList<Stock>(), this));
         catalogVM.getStocks().observe(getViewLifecycleOwner(), stocks -> {
-            rv.setAdapter(new StockAdapter(
-                    stocks,
-                    Glide.with(requireActivity().getApplicationContext()))
-            );
+            rv.setAdapter(new StockAdapter(stocks, this));
         });
+    }
+
+    @Override
+    public void purchase(Stock stock) {
+
     }
 }

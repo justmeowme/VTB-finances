@@ -23,8 +23,14 @@ public class GridMarginItemDecoration extends RecyclerView.ItemDecoration {
         }
         if (parent.getChildAdapterPosition(view) % spanCount == 0) {
             outRect.left = marginSize;
+        } else {
+            outRect.left = marginSize / spanCount;
         }
-        outRect.right = marginSize;
+        if (parent.getChildAdapterPosition(view) % spanCount == spanCount - 1) {
+            outRect.right = marginSize;
+        } else {
+            outRect.right = marginSize / spanCount;
+        }
         outRect.bottom = marginSize;
     }
 }
